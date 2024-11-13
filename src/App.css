@@ -1,0 +1,64 @@
+.hero {
+	position: relative;
+	/*top: 0;
+	left: 0; */
+	width: 100%;
+	height: 40vh;
+	/* background-image: url('https://images.alphacoders.com/133/thumb-1920-1330376.png'); */
+	/* background-attachment: fixed; */
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	overflow: visible;
+	/* z-index: -1; */
+}
+
+.container {
+	/* top: 50vh; */
+	max-width: 1024px;
+	margin: 0 auto;
+	padding: 0.75em 2em;
+	/* background-color: rgb(255, 255, 255); */
+	/* padding-top: 400px; */
+}
+@media screen and (min-width: 1024px) {
+	.hero {
+		height: 70vh;
+	}
+}
+.btn {
+	font: inherit;
+	position: absolute;
+	bottom: 1px;
+	left: 50%;
+	transform: translateX(-50%);
+	margin: 0 auto;
+	-webkit-backdrop-filter: brightness(1) blur(5px);
+	backdrop-filter: brightness(1) blur(5px);
+	border-radius: 5px;
+	border: 2px solid transparent;
+	padding: 0.6em 1.2em;
+	font-size: 18px;
+	font-weight: 500;
+	cursor: pointer;
+	box-shadow: 1px 4px 8px rgba(0, 0, 0.5);
+	border-color: #ffffff;
+
+	background-color: #000000;
+	border-radius: 1.5em;
+	text-align: center;
+	box-shadow: 0 4px 8px rgba(0, 0, 00.3);
+	margin-bottom: 1em;
+	-webkit-backdrop-filter: brightness(1.5) blur(5px);
+	backdrop-filter: brightness(1.2) blur(10px);
+	color: var(--text);
+}
+.btn:hover {
+	border-color: #000000;
+	transform: translateX(-50%) scale(1.05);
+	/* transform: scale(1.05); */
+}
+/* .btn:focus,
+.btn:focus-visible {
+	outline: 4px auto -webkit-focus-ring-color;
+} */
