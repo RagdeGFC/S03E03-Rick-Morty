@@ -32,9 +32,6 @@ function App() {
 			</div>
 
 			<div className="container">
-				{/* <button onClick={changePhrase} className="btn">
-					Change hero image{' '}
-				</button> */}
 				<Search setLocationId={setLocationId} />
 				<CardInfo location={location} />
 				<ResidentsList residents={location?.residents} />
