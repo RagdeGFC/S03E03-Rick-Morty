@@ -1,14 +1,24 @@
 .card {
 	background-color: #00000090;
-	-webkit-backdrop-filter: brightness(1.5) blur(5px);
-	backdrop-filter: brightness(1) blur(10px);
-	/* border: 2px solid red; */
+	/* border: 1px solid rgb(0, 0, 0); */
 	/* background-color: var(--bg-card); */
 	/* background-color: black; */
 	color: #fff;
 	border-radius: 0.5em;
 	overflow: hidden;
 }
+.card:hover {
+	transform: scale(1.05);
+}
+
+/* .card:hover ~ .card {
+	-webkit-backdrop-filter: brightness(1.5) blur(5px);
+	backdrop-filter: brightness(1) blur(10px);
+	background: rgba(255, 255, 255, 0.6); 
+	box-shadow: 2px 1px 1px rgb(0, 0, 0);
+	transform: scale(1); 
+	backdrop-filter: blur(4px);
+} */
 
 .card__image {
 	position: relative;
@@ -25,7 +35,7 @@
 .card__status {
 	position: absolute;
 	top: 1.5rem;
-	padding-right: 1.5em;
+	padding-right: 0.5em;
 	padding-left: 0.5em;
 	border-radius: 0 4px 4px 0;
 	left: 0;

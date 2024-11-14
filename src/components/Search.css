@@ -1,9 +1,10 @@
 .search {
-	max-width: 350px;
+	max-width: 400px;
 	width: 100%;
 	margin: 0em auto 0;
 	display: grid;
 	grid-template-columns: 1fr 0.25fr;
+	align-items: center;
 }
 
 .search__input {
@@ -24,6 +25,10 @@
 	padding: 0.5em 0.75em;
 	font-size: 1.1rem;
 	outline: none;
+}
+
+.search__btn:hover {
+	transform: scale(1.05);
 }
 
 .message__error {
