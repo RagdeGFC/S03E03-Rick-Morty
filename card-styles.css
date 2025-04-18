@@ -1,0 +1,182 @@
+/* Estilos reutilizables para cards - Extraído del proyecto Pokédex */
+
+/* Contenedor principal de las cards */
+.cards-container {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 1.2em;
+	width: 100%;
+	max-width: 1200px;
+	padding: 1em;
+	box-sizing: border-box;
+	margin: 0 auto;
+}
+
+/* Media queries para responsive design */
+@media (max-width: 1200px) {
+	.cards-container {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		padding: 2em;
+		max-width: 90%;
+	}
+}
+
+@media (max-width: 768px) {
+	.cards-container {
+		grid-template-columns: 1fr;
+		max-width: 100%;
+		padding: 1em;
+	}
+}
+
+/* Estilos de la card individual */
+.card {
+	width: 100%;
+	max-width: 300px;
+	margin: 0 auto;
+	border: 3px solid rgba(4, 255, 0, 0.8);
+	overflow: hidden;
+	cursor: pointer;
+	-webkit-backdrop-filter: brightness(1.5) blur(5px);
+	backdrop-filter: brightness(1.2) blur(10px);
+	background-color: rgba(0, 0, 0, 0.851);
+	color: #ffffff;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+	transition: transform 0.3s ease, border-color 0.2s ease-in-out;
+	border-radius: 8px;
+	position: relative;
+}
+
+.card::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	border: 5px solid transparent;
+	border-radius: 6px;
+	transition: border-color 0.1s ease-in;
+	pointer-events: none;
+	z-index: 1;
+}
+
+.card:hover {
+	transform: scale(1.02);
+	border: 1px solid rgba(0, 0, 0, 0.8);
+	background-color: rgba(0, 0, 0, 0.95);
+}
+
+.card:hover::before {
+	border-color: #ffffff;
+	transition: border-color 0s;
+	opacity: 0;
+	transition: opacity 0.1s ease-in;
+}
+
+/* Header de la card con imagen */
+.card-header {
+	position: relative;
+	width: 100%;
+	aspect-ratio: 1;
+	background: linear-gradient(
+		177.03deg,
+		#323569 -11.97%,
+		#454aa8 57.49%,
+		#787dda 135.64%
+	);
+	overflow: hidden;
+	border-radius: 6px;
+}
+
+.card-header img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.card-label {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	background-color: rgba(0, 0, 0, 0.8);
+	padding: 5px 10px;
+	border-radius: 20px;
+	font-size: 0.9em;
+	color: var(--card-primary-color);
+	border: 1px solid var(--card-primary-color);
+}
+
+/* Contenido de la card */
+.card-body {
+	padding: 0.4em;
+}
+
+.card-title {
+	text-align: center;
+	text-transform: capitalize;
+	background-color: #000000fe;
+	border: 1px solid var(--card-primary-color);
+	border-radius: 6px;
+	padding: 0.3em;
+	margin: -1em 0.5em 0.6em;
+	position: relative;
+	font-size: 1em;
+	color: var(--card-primary-color);
+	min-height: 1.8em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	word-wrap: break-word;
+	white-space: normal;
+	line-height: 1.1;
+}
+
+/* Estilos para stats */
+.card-stats {
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	gap: 0.4em;
+	padding: 0.3em;
+	background-color: rgba(0, 0, 0, 0.5);
+	border-radius: 6px;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card-stats-item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 0.2em;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card-stats-item:last-child {
+	border-bottom: none;
+}
+
+.card-stats-item span:first-child {
+	font-size: 0.85em;
+	color: #ffffff;
+	opacity: 0.8;
+	margin-bottom: 0.2em;
+}
+
+.card-stats-item span:last-child {
+	color: var(--card-primary-color);
+	font-size: 1em;
+	font-weight: bold;
+}
+
+/* Variables personalizables */
+:root {
+	--card-primary-color: rgb(12, 236, 75);
+	--card-background-color: rgba(0, 0, 0, 0.851);
+	--card-border-color: #ffffff;
+	--card-text-color: #ffffff;
+	--card-hover-scale: 1.02;
+	--card-transition-time: 0.3s;
+}

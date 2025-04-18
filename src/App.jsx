@@ -4,6 +4,7 @@ import CardInfo from './components/CardInfo';
 import ResidentsList from './components/ResidentsList';
 import Search from './components/Search';
 import './App.css';
+import '../card-styles.css';
 import randomIndex from './helpers/randomIndex';
 import { bg1, bg2, bg3, bg4, bg5, bg6, bg7, bg8, bg9 } from './assets/images/';
 

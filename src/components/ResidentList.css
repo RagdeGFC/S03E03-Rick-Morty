@@ -5,3 +5,13 @@
 	gap: 0.5em;
 	/* background-color: black; */
 }
+
+.cards-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 2em;
+	padding: 2em;
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+}

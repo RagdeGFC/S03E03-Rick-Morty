@@ -4,12 +4,10 @@ import './ResidentList.css';
 
 function ResidentsList({ residents }) {
 	return (
-		<div className="cards">
-			{residents?.map((resident) => {
-				const residentSplit = resident.split('/');
-				const id = residentSplit[residentSplit.length - 1];
-				return <ResidentCard key={id} url={resident} />;
-			})}
+		<div className="cards-container">
+			{residents?.map((url) => (
+				<ResidentCard key={url} url={url} />
+			))}
 		</div>
 	);
 }

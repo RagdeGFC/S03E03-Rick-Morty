@@ -1,9 +1,9 @@
 .search {
-	max-width: 400px;
+	max-width: 600px;
 	width: 100%;
 	margin: 0em auto 0;
-	display: grid;
-	grid-template-columns: 1fr 0.25fr;
+	display: flex;
+	justify-content: center;
 	align-items: center;
 }
 
@@ -11,24 +11,74 @@
 	border: none;
 	background-color: #fff;
 	border-radius: 8px 0 0 8px;
-	padding: 0.5em 0.75em;
+	padding: 0.5em 1em;
 	font-size: 1.1rem;
 	outline: none;
+	height: 42px;
+	box-sizing: border-box;
+	width: 100%;
+	max-width: 400px;
+}
+
+.search__input::placeholder {
+	color: #666;
+}
+
+.search__buttons {
 	display: flex;
+	gap: 0.5em;
 }
 
 .search__btn {
-	border: none;
-	color: #fff;
-	background-color: rgb(104, 146, 18);
-	border-radius: 0px 8px 8px 0px;
-	padding: 0.5em 0.75em;
-	font-size: 1.1rem;
-	outline: none;
+	padding: 0.5em 1.2em;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	border: 2px solid #ffffff;
+	box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.5);
+	background-color: #000000;
+	text-align: center;
+	color: rgba(12, 236, 75, 0.879);
+	height: 42px;
+	box-sizing: border-box;
+	min-width: 90px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Estilo específico para el primer botón (Search) */
+.search__buttons button:first-child {
+	border-radius: 0 8px 8px 0;
+	margin-left: -2px;
+}
+
+/* Estilo específico para el segundo botón (Reset) */
+.search__buttons button:last-child {
+	border-radius: 8px;
+	opacity: 0;
+	visibility: hidden;
+	width: 0;
+	min-width: 0;
+	padding: 0;
+	margin: 0;
+	transform: scale(0.8);
+	transition: all 0.3s ease;
+}
+
+/* Mostrar el botón de reset cuando hay input */
+.search__buttons.has-value button:last-child {
+	opacity: 1;
+	visibility: visible;
+	width: auto;
+	min-width: 90px;
+	padding: 0.5em 1.2em;
+	margin-left: 0.5em;
+	transform: scale(1);
 }
 
 .search__btn:hover {
-	transform: scale(1.05);
+	transform: translateY(-2px);
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 .message__error {
