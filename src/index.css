@@ -9,7 +9,7 @@
 	-moz-osx-font-smoothing: grayscale;
 
 	/* Colors */
-	--body-bg: #05292ed1;
+	--body-bg: #000000d1;
 	--text: #7cb623;
 	--bg-card: #062226;
 	--btn-primary: #70a821;
@@ -31,7 +31,7 @@ html {
 
 body {
 	margin: 0;
-	background-color: var(--body-bg);
+	background-color: black;
 }
 
 img,

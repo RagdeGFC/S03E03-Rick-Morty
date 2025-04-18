@@ -6,12 +6,22 @@ function Search({ setLocationId }) {
 	const [hasValue, setHasValue] = useState(false);
 	const inputRef = useRef();
 
+	const handleMouseMove = (e) => {
+		const btn = e.currentTarget;
+		const rect = btn.getBoundingClientRect();
+		const x = e.clientX - rect.left;
+		const y = e.clientY - rect.top;
+
+		btn.style.setProperty('--x', `${x}px`);
+		btn.style.setProperty('--y', `${y}px`);
+	};
+
 	const onSubmit = (e) => {
 		e.preventDefault();
 		const id = parseInt(inputRef.current.value);
 
 		if (isNaN(id)) {
-			setError('❌ Ivalid number');
+			setError('❌ Invalid number');
 			setTimeout(() => {
 				setError('');
 			}, 3000);
@@ -50,10 +60,19 @@ function Search({ setLocationId }) {
 					onChange={handleInputChange}
 				/>
 				<div className={`search__buttons ${hasValue ? 'has-value' : ''}`}>
-					<button type="submit" className="search__btn">
+					<button
+						type="submit"
+						className="search__btn btn-spotlight"
+						onMouseMove={handleMouseMove}
+					>
 						Search
 					</button>
-					<button type="button" className="search__btn" onClick={handleReset}>
+					<button
+						type="button"
+						className="search__btn btn-spotlight"
+						onClick={handleReset}
+						onMouseMove={handleMouseMove}
+					>
 						Reset Filter
 					</button>
 				</div>

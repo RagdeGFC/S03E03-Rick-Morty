@@ -1,3 +1,30 @@
+.btn-spotlight {
+	position: relative;
+	overflow: hidden;
+}
+
+.btn-spotlight::before {
+	content: '';
+	position: absolute;
+	background: radial-gradient(
+		circle at center,
+		rgba(12, 236, 75, 0.5) 0%,
+		transparent 70%
+	);
+	width: 100px;
+	height: 100px;
+	top: var(--y);
+	left: var(--x);
+	transform: translate(-50%, -50%);
+	opacity: 0;
+	transition: opacity 0.2s ease;
+	pointer-events: none;
+}
+
+.btn-spotlight:hover::before {
+	opacity: 1;
+}
+
 .search {
 	max-width: 600px;
 	width: 100%;
@@ -46,13 +73,11 @@
 	justify-content: center;
 }
 
-/* Estilo específico para el primer botón (Search) */
 .search__buttons button:first-child {
 	border-radius: 0 8px 8px 0;
 	margin-left: -2px;
 }
 
-/* Estilo específico para el segundo botón (Reset) */
 .search__buttons button:last-child {
 	border-radius: 8px;
 	opacity: 0;
@@ -65,7 +90,6 @@
 	transition: all 0.3s ease;
 }
 
-/* Mostrar el botón de reset cuando hay input */
 .search__buttons.has-value button:last-child {
 	opacity: 1;
 	visibility: visible;
