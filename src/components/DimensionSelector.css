@@ -36,3 +36,7 @@
 	padding: 0.5em;
 	font-family: 'Roboto', sans-serif;
 }
+
+.dimension-selector__select option:checked {
+	color: rgb(12, 236, 75);
+}

@@ -5,6 +5,7 @@ import DimensionSelector from './DimensionSelector';
 function Search({ setLocationId }) {
 	const [error, setError] = useState('');
 	const [hasValue, setHasValue] = useState(false);
+	const [selectedDimension, setSelectedDimension] = useState(1);
 	const inputRef = useRef();
 
 	const handleMouseMove = (e) => {
@@ -38,21 +39,33 @@ function Search({ setLocationId }) {
 		}
 
 		setLocationId(id);
+		setSelectedDimension(id);
 	};
 
 	const handleReset = () => {
 		inputRef.current.value = '';
 		setLocationId(1);
 		setHasValue(false);
+		setSelectedDimension(1);
 	};
 
 	const handleInputChange = () => {
 		setHasValue(inputRef.current.value.length > 0);
 	};
 
+	const handleDimensionChange = (id) => {
+		setSelectedDimension(id);
+		setLocationId(id);
+		setHasValue(true);
+		inputRef.current.value = '';
+	};
+
 	return (
 		<div className="search-container">
-			<DimensionSelector setLocationId={setLocationId} />
+			<DimensionSelector
+				setLocationId={handleDimensionChange}
+				selectedDimension={selectedDimension}
+			/>
 			<form onSubmit={onSubmit} className="search">
 				<input
 					ref={inputRef}
@@ -61,7 +74,11 @@ function Search({ setLocationId }) {
 					placeholder="Enter dimension number (1-126)"
 					onChange={handleInputChange}
 				/>
-				<div className={`search__buttons ${hasValue ? 'has-value' : ''}`}>
+				<div
+					className={`search__buttons ${
+						hasValue || selectedDimension !== 1 ? 'has-value' : ''
+					}`}
+				>
 					<button
 						type="submit"
 						className="search__btn btn-spotlight"

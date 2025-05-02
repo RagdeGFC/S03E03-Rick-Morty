@@ -1,14 +1,11 @@
-import { useState } from 'react';
 import './DimensionSelector.css';
 import useDimensions from '../hooks/useDimensions';
 
-function DimensionSelector({ setLocationId }) {
-	const [selectedDimension, setSelectedDimension] = useState(1);
+function DimensionSelector({ setLocationId, selectedDimension }) {
 	const { dimensions, loading, error } = useDimensions();
 
 	const handleDimensionChange = (e) => {
 		const value = parseInt(e.target.value);
-		setSelectedDimension(value);
 		setLocationId(value);
 	};
 

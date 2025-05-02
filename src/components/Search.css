@@ -46,7 +46,7 @@
 .search__input {
 	border: 1px solid rgb(12, 236, 75);
 	background-color: transparent;
-	border-radius: 8px;
+	border-radius: 8px 0 0 8px;
 	padding: 0.5em 1em;
 	font-size: 1rem;
 	outline: none;
@@ -55,6 +55,7 @@
 	width: 100%;
 	color: white;
 	font-family: 'Roboto', sans-serif;
+	border-right: none;
 }
 
 .search__input::placeholder {
@@ -64,7 +65,7 @@
 
 .search__buttons {
 	display: flex;
-	margin-left: 0.5em;
+	height: 42px;
 }
 
 .search__btn {
@@ -80,13 +81,12 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	border-radius: 8px;
 	font-family: 'Roboto', sans-serif;
 }
 
 .search__buttons button:first-child {
 	border-radius: 0 8px 8px 0;
-	margin-left: -2px;
+	margin-left: -1px;
 }
 
 .search__buttons button:last-child {
@@ -109,6 +109,12 @@
 	padding: 0.5em 1.2em;
 	margin-left: 0.5em;
 	transform: scale(1);
+	border-radius: 8px;
+}
+
+.search__buttons.has-value button:last-child:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 .search__btn:hover {
