@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
 import './Search.css';
+import DimensionSelector from './DimensionSelector';
 
 function Search({ setLocationId }) {
 	const [error, setError] = useState('');
@@ -41,7 +42,7 @@ function Search({ setLocationId }) {
 
 	const handleReset = () => {
 		inputRef.current.value = '';
-		setLocationId(1); // Volvemos a la dimensión inicial
+		setLocationId(1);
 		setHasValue(false);
 	};
 
@@ -50,7 +51,8 @@ function Search({ setLocationId }) {
 	};
 
 	return (
-		<>
+		<div className="search-container">
+			<DimensionSelector setLocationId={setLocationId} />
 			<form onSubmit={onSubmit} className="search">
 				<input
 					ref={inputRef}
@@ -78,7 +80,7 @@ function Search({ setLocationId }) {
 				</div>
 			</form>
 			<p className="message__error">{error && error}</p>
-		</>
+		</div>
 	);
 }
 
