@@ -40,3 +40,18 @@
 .dimension-selector__select option:checked {
 	color: rgb(12, 236, 75);
 }
+
+@media (max-width: 768px) {
+	.dimension-selector {
+		width: 100%;
+		max-width: 100%;
+		box-sizing: border-box;
+	}
+	.dimension-selector__select {
+		width: 100%;
+		font-size: 0.95rem;
+		padding: 0.5em 1em;
+		height: 42px;
+		box-sizing: border-box;
+	}
+}
