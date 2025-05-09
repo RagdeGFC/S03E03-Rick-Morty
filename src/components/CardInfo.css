@@ -43,7 +43,7 @@
 }
 
 .cardInfo__title {
-	color: var(--text);
+	color: #ffffff;
 	margin-bottom: 0.5em;
 	background-color: #00000088;
 	border-radius: 15px;
@@ -53,6 +53,12 @@
 	text-align: center;
 	-webkit-text-stroke: 0px #ffffff;
 	border: 2px solid rgba(0, 255, 42, 0.8);
+}
+
+.btn-spotlight:hover,
+.cardInfo__title:hover {
+	border: 2px solid rgba(255, 255, 255, 0.8);
+	color: #00ff37;
 }
 
 .cardInfo__container {

@@ -34,7 +34,7 @@
 	font-weight: 500;
 	cursor: pointer;
 	box-shadow: 1px 4px 8px rgba(0, 0, 0.5);
-	border-color: #ffffff;
+	border-color: #15ff00;
 
 	background-color: #000000;
 	border-radius: 1.5em;
@@ -43,7 +43,7 @@
 	margin-bottom: 1em;
 	-webkit-backdrop-filter: brightness(1.5) blur(5px);
 	backdrop-filter: brightness(1.2) blur(10px);
-	color: var(--text);
+	color: #ffffff;
 	transition: all 0.3s ease;
 }
 .btn:hover {
