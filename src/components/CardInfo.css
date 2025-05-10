@@ -1,5 +1,5 @@
 .cardInfo {
-	max-width: 350px;
+	max-width: 700px;
 	width: 100%;
 	padding: 2em 1.5em;
 	margin: 0 auto;
@@ -76,7 +76,7 @@
 
 @media (min-width: 768px) {
 	.cardInfo {
-		max-width: 400px;
+		max-width: 700px;
 	}
 
 	.cardInfo__container {
@@ -86,7 +86,7 @@
 
 @media (min-width: 1024px) {
 	.cardInfo {
-		max-width: 600px;
+		max-width: 700px;
 	}
 
 	.cardInfo__container {

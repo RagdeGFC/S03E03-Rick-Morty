@@ -62,10 +62,6 @@ function Search({ setLocationId }) {
 
 	return (
 		<div className="search-container">
-			<DimensionSelector
-				setLocationId={handleDimensionChange}
-				selectedDimension={selectedDimension}
-			/>
 			<form onSubmit={onSubmit} className="search">
 				<input
 					ref={inputRef}
@@ -96,6 +92,10 @@ function Search({ setLocationId }) {
 					</button>
 				</div>
 			</form>
+			<DimensionSelector
+				setLocationId={handleDimensionChange}
+				selectedDimension={selectedDimension}
+			/>
 			<p className="message__error">{error && error}</p>
 		</div>
 	);

@@ -1,7 +1,9 @@
 .dimension-selector {
 	display: flex;
 	align-items: center;
-	width: 400px;
+	width: 700px;
+	max-width: 100%;
+	margin: 0 auto;
 }
 
 .dimension-selector__select {
